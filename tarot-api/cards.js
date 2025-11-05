@@ -2,7 +2,7 @@ const majorArcana = [
   {
     id: 0,
     name: "The Fool",
-    image: "./assets/00-the-fool.webp",
+    image: "/assets/00-the-fool.webp",
     meanings: {
       general: {
         upright:
@@ -39,7 +39,7 @@ const majorArcana = [
   {
     id: 1,
     name: "The Magician",
-    image: "./assets/01-the-magician.webp",
+    image: "/assets/01-the-magician.webp",
     meanings: {
       general: {
         upright:
@@ -76,7 +76,7 @@ const majorArcana = [
   {
     id: 2,
     name: "The High Priestess",
-    image: "./assets/02-the-high-priestess.webp",
+    image: "/assets/02-the-high-priestess.webp",
     meanings: {
       general: {
         upright:
@@ -113,7 +113,7 @@ const majorArcana = [
   {
     id: 3,
     name: "The Empress",
-    image: "./assets/03-the-empress.webp",
+    image: "/assets/03-the-empress.webp",
     meanings: {
       general: {
         upright: "abundance, nurturing, fertility, creativity, comfort, beauty",
@@ -146,7 +146,7 @@ const majorArcana = [
   {
     id: 4,
     name: "The Emperor",
-    image: "./assets/04-the-emperor.webp",
+    image: "/assets/04-the-emperor.webp",
     meanings: {
       general: {
         upright:
@@ -178,7 +178,7 @@ const majorArcana = [
   {
     id: 5,
     name: "The Hierophant",
-    image: "./assets/05-the-hierophant.webp",
+    image: "/assets/05-the-hierophant.webp",
     meanings: {
       general: {
         upright:
@@ -212,7 +212,7 @@ const majorArcana = [
   {
     id: 6,
     name: "The Lovers",
-    image: "./assets/06-the-lovers.webp",
+    image: "/assets/06-the-lovers.webp",
     meanings: {
       general: {
         upright: "love, harmony, partnership, alignment, meaningful choices",
@@ -244,7 +244,7 @@ const majorArcana = [
   {
     id: 7,
     name: "The Chariot",
-    image: "./assets/07-the-chariot.webp",
+    image: "/assets/07-the-chariot.webp",
     meanings: {
       general: {
         upright:
@@ -278,7 +278,7 @@ const majorArcana = [
   {
     id: 8,
     name: "Strength",
-    image: "./assets/08-strength.webp",
+    image: "/assets/08-strength.webp",
     meanings: {
       general: {
         upright:
@@ -314,7 +314,7 @@ const majorArcana = [
   {
     id: 9,
     name: "The Hermit",
-    image: "./assets/09-the-hermit.webp",
+    image: "/assets/09-the-hermit.webp",
     meanings: {
       general: {
         upright:
@@ -347,7 +347,7 @@ const majorArcana = [
   {
     id: 10,
     name: "Wheel of Fortune",
-    image: "./assets/10-wheel-of-fortune.webp",
+    image: "/assets/10-wheel-of-fortune.webp",
     meanings: {
       general: {
         upright: "change, cycles, fate, turning points, luck, movement",
@@ -379,7 +379,7 @@ const majorArcana = [
   {
     id: 11,
     name: "Justice",
-    image: "./assets/11-justice.webp",
+    image: "/assets/11-justice.webp",
     meanings: {
       general: {
         upright: "fairness, truth, cause and effect, accountability, balance",
@@ -411,7 +411,7 @@ const majorArcana = [
   {
     id: 12,
     name: "The Hanged Man",
-    image: "./assets/12-the-hanged-man.webp",
+    image: "/assets/12-the-hanged-man.webp",
     meanings: {
       general: {
         upright: "new perspective, surrender, pause, sacrifice for insight",
@@ -445,7 +445,7 @@ const majorArcana = [
   {
     id: 13,
     name: "Death",
-    image: "./assets/13-death.webp",
+    image: "/assets/13-death.webp",
     meanings: {
       general: {
         upright: "endings, transformation, release, renewal, major transition",
@@ -476,7 +476,7 @@ const majorArcana = [
   {
     id: 14,
     name: "Temperance",
-    image: "./assets/14-temperance.webp",
+    image: "/assets/14-temperance.webp",
     meanings: {
       general: {
         upright:
@@ -508,7 +508,7 @@ const majorArcana = [
   {
     id: 15,
     name: "The Devil",
-    image: "./assets/15-the-devil.webp",
+    image: "/assets/15-the-devil.webp",
     meanings: {
       general: {
         upright:
@@ -541,7 +541,7 @@ const majorArcana = [
   {
     id: 16,
     name: "The Tower",
-    image: "./assets/16-the-tower.webp",
+    image: "/assets/16-the-tower.webp",
     meanings: {
       general: {
         upright: "sudden upheaval, revelation, breakdown of false structures",
@@ -572,7 +572,7 @@ const majorArcana = [
   {
     id: 17,
     name: "The Star",
-    image: "./assets/17-the-star.webp",
+    image: "/assets/17-the-star.webp",
     meanings: {
       general: {
         upright: "hope, renewal, faith, serenity, authenticity, guidance",
@@ -603,7 +603,7 @@ const majorArcana = [
   {
     id: 18,
     name: "The Moon",
-    image: "./assets/18-the-moon.webp",
+    image: "/assets/18-the-moon.webp",
     meanings: {
       general: {
         upright:
@@ -635,7 +635,7 @@ const majorArcana = [
   {
     id: 19,
     name: "The Sun",
-    image: "./assets/19-the-sun.webp",
+    image: "/assets/19-the-sun.webp",
     meanings: {
       general: {
         upright: "joy, vitality, success, clarity, warmth, positivity",
@@ -667,7 +667,7 @@ const majorArcana = [
   {
     id: 20,
     name: "Judgement",
-    image: "./assets/20-judgement.webp",
+    image: "/assets/20-judgement.webp",
     meanings: {
       general: {
         upright: "awakening, reckoning, calling, evaluation, second chances",
@@ -699,7 +699,7 @@ const majorArcana = [
   {
     id: 21,
     name: "The World",
-    image: "./assets/21-the-world.webp",
+    image: "/assets/21-the-world.webp",
     meanings: {
       general: {
         upright: "completion, wholeness, accomplishment, integration, travel",

@@ -1,0 +1,26 @@
+.card-selector {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  gap: 15px; /* Spacing between cards */
+  justify-content: center;
+  padding: 20px;
+}
+
+.card-item {
+  text-align: center;
+  width: 150px; /* Adjust as needed */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-name {
+    margin-top: 5px;
+    font-weight: bold;
+}
