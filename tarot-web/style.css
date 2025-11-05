@@ -1,26 +1,71 @@
-.card-selector {
+.card-slot {
+  width: 100px;
+  height: 170px;
+  border: 2px dashed #555;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  margin: 10px;
   display: flex;
-  flex-wrap: wrap; /* Allows cards to wrap to the next line */
-  gap: 15px; /* Spacing between cards */
   justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.slot-number {
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+#spread-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
 }
 
-.card-item {
-  text-align: center;
-  width: 150px; /* Adjust as needed */
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 8px;
+.side-staff {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 20px;
 }
 
-.card-image {
-  width: 100%;
-  height: auto;
-  display: block;
+.main-cross {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
-.card-name {
-    margin-top: 5px;
-    font-weight: bold;
+.cross-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-stack {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin: 10px;
+}
+
+#slot-1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+#slot-2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(270deg);
+  margin: 0;
 }

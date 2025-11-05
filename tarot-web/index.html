@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cartomantic Assistant</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="title">Welcome to the Cartomantic Assistant!</div>
@@ -12,31 +12,55 @@
       Please, choose which method you prefer for picking your cards:
     </div>
     <div class="main">
-      <div class="spread">
-        <div class="left">
-          <div class="top">
-            <div id="position-5"></div>
-          </div>
-          <div class="mid">
-            <div id="position-3"></div>
-            <div class="center">
-              <div id="position-1"></div>
-              <div id="position-2"></div>
+      <div id="spread-container">
+        <div class="main-cross">
+          <div class="cross-col-left">
+            <div class="card-slot" id="slot-3">
+              <span class="slot-number">3</span>
             </div>
-            <div id="position-4"></div>
           </div>
-          <div class="bot">
-            <div id="position-6"></div>
+
+          <div class="cross-col-center">
+            <div class="card-slot" id="slot-5">
+              <span class="slot-number">5</span>
+            </div>
+
+            <div class="center-stack">
+              <div class="card-slot" id="slot-1">
+                <span class="slot-number">1</span>
+              </div>
+              <div class="card-slot" id="slot-2">
+                <span class="slot-number">2</span>
+              </div>
+            </div>
+
+            <div class="card-slot" id="slot-6">
+              <span class="slot-number">6</span>
+            </div>
+          </div>
+
+          <div class="cross-col-right">
+            <div class="card-slot" id="slot-4">
+              <span class="slot-number">4</span>
+            </div>
           </div>
         </div>
-        <div class="right">
-          <div id="position-10"></div>
-          <div id="position-9"></div>
-          <div id="position-8"></div>
-          <div id="position-7"></div>
+
+        <div class="side-staff">
+          <div class="card-slot" id="slot-10">
+            <span class="slot-number">10</span>
+          </div>
+          <div class="card-slot" id="slot-9">
+            <span class="slot-number">9</span>
+          </div>
+          <div class="card-slot" id="slot-8">
+            <span class="slot-number">8</span>
+          </div>
+          <div class="card-slot" id="slot-7">
+            <span class="slot-number">7</span>
+          </div>
         </div>
       </div>
-      <div class="card-selector"></div>
     </div>
     <script src="script.js"></script>
   </body>
