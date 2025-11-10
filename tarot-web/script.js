@@ -120,6 +120,56 @@ function runAIInterpretation() {
   sendToAIService(interpretationData);
 }
 
+function prepareInterpretationData(placedCards, question) {
+  const spreadDetails = placedCards.map((slot) => ({
+    position: slot.slotId,
+    meaning_of_position: getPositionMeaning(slot.slotId),
+    card_name: slot.card.name,
+    orientation: slot.orientation,
+    general_meaning: slot.card.meanings.general[slot.orientation],
+  }));
+
+  return {
+    user_question: question,
+    spread_type: "Celtic Cross",
+    spread_layout: spreadDetails,
+  };
+}
+
+async function sendToAIService(payload) {
+  const AI_ENDPOINT = "YOUR_N8N_WEBHOOK_URL_HERE";
+
+  try {
+    document.getElementById("ai-interpret-btn").textContent = "Interpreting...";
+    document.getElementById("ai-interpret-btn").disabled = true;
+
+    const response = await fetch(AI_ENDPOINT, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      throw new Error(`AI Service responded with status: ${response.status}`);
+    }
+
+    const result = await response.json();
+
+    alert(
+      "Interpretation Complete:\n\n" +
+        (result.interpretation || JSON.stringify(result, null, 2))
+    );
+  } catch (error) {
+    console.error("AI Interpretation Failed:", error);
+    alert("Failed to get interpretation. See console for details.");
+  } finally {
+    document.getElementById("ai-interpret-btn").textContent = "Interpret";
+    document.getElementById("ai-interpret-btn").disabled = false;
+  }
+}
+
 function setupCardIconListeners() {
   console.log("Icon listeners are ready.");
 }
