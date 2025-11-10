@@ -87,7 +87,37 @@ function setupButtonListeners() {
   if (autoBtn) {
     autoBtn.addEventListener("click", runAutomaticMode);
   }
-  console.log("Button listeners are ready.");
+  const aiBtn = document.getElementById("ai-interpret-btn");
+  if (aiBtn) {
+    aiBtn.addEventListener("click", runAIInterpretation);
+  }
+}
+
+function runAIInterpretation() {
+  const placedCards = spreadState.filter((slot) => slot.card !== null);
+  if (placedCards.length !== 10) {
+    alert(
+      "Please place 10 cards on the spread (either manually or automatically) before asking for an interpretation."
+    );
+    return;
+  }
+  const questionText = document
+    .querySelector(".question-box textarea")
+    .value.trim();
+  if (questionText.length < 5) {
+    alert(
+      "Please enter a clear question in the text box for the AI to interpret the cards."
+    );
+    return;
+  }
+  const interpretationData = prepareInterpretationData(
+    placedCards,
+    questionText
+  );
+
+  // 4. Send data to the processing service
+  // For your n8n plan, this would be a POST request to your webhook
+  sendToAIService(interpretationData);
 }
 
 function setupCardIconListeners() {

@@ -178,8 +178,8 @@ body {
 
 .control-buttons {
   display: flex;
-  gap: 15px; /* Space between buttons */
-  margin: 10px 20px; /* Adds margin around the buttons */
+  gap: 15px;
+  margin-top: 10px;
 }
 
 /* Base style for all control buttons */
