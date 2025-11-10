@@ -3,6 +3,7 @@ const majorArcana = require("./cards.js");
 const cors = require("cors");
 
 const app = express();
+app.use(express.static("public"));
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
@@ -15,5 +16,5 @@ app.get("/api/cards", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
+  console.log(`Server listening on http://localhost:${PORT}/api/cards`);
 });
