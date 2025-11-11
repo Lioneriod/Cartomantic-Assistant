@@ -169,10 +169,6 @@ async function sendToAIService(payload) {
 }
 
 function setupCardIconListeners() {
-  console.log("Icon listeners are ready.");
-}
-
-function setupCardIconListeners() {
   const spreadContainer = document.getElementById("spread-container");
   spreadContainer.addEventListener("click", (event) => {
     const target = event.target;
