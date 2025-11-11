@@ -134,12 +134,13 @@ function prepareInterpretationData(placedCards, question) {
 }
 
 async function sendToAIService(payload) {
-  const AI_ENDPOINT = "YOUR_N8N_WEBHOOK_URL_HERE";
+  const AI_ENDPOINT =
+    "https://lioneriod.app.n8n.cloud/webhook-test/12a7c3b3-b771-40f6-a01c-0b6d2ba87fab";
 
   try {
     document.getElementById("ai-interpret-btn").textContent = "Interpreting...";
     document.getElementById("ai-interpret-btn").disabled = true;
-
+    console.log("Payload being sent:", JSON.stringify(payload, null, 2));
     const response = await fetch(AI_ENDPOINT, {
       method: "POST",
       headers: {
