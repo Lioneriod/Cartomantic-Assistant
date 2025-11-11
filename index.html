@@ -70,16 +70,27 @@
           </div>
         </div>
         <div>
-          <div>
-            <div class="question-box">
+          <div class="question-box">
+            <div class="textarea-wrapper">
               <h3>Ask the Cartomancer</h3>
-              <textarea placeholder="Type your question..."></textarea>
+              <textarea
+                id="user-question"
+                placeholder="Type your question..."
+              ></textarea>
             </div>
-
-            <div id="ai-response-container">
-              <h3>AI Interpretation:</h3>
-              <div id="ai-response-content"></div>
+            <div class="category-wrapper">
+              <h3>Category</h3>
+              <select id="question-category">
+                <option value="general">General</option>
+                <option value="love">Love</option>
+                <option value="career">Career</option>
+                <option value="finances">Finances</option>
+              </select>
             </div>
+          </div>
+          <div id="ai-response-container">
+            <h3>AI Interpretation:</h3>
+            <pre id="ai-response-content"></pre>
           </div>
         </div>
       </div>

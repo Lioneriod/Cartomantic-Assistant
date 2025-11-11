@@ -94,6 +94,9 @@ function setupButtonListeners() {
 }
 
 function runAIInterpretation() {
+  console.log("Starting AI Interpretation...");
+  const category = document.getElementById("question-category").value;
+  const questionText = document.getElementById("user-question").value.trim();
   const placedCards = spreadState.filter((slot) => slot.card !== null);
   if (placedCards.length !== 10) {
     alert(
@@ -101,9 +104,6 @@ function runAIInterpretation() {
     );
     return;
   }
-  const questionText = document
-    .querySelector(".question-box textarea")
-    .value.trim();
   if (questionText.length < 5) {
     alert(
       "Please enter a clear question in the text box for the AI to interpret the cards."
@@ -112,7 +112,8 @@ function runAIInterpretation() {
   }
   const interpretationData = prepareInterpretationData(
     placedCards,
-    questionText
+    questionText,
+    category
   );
   sendToAIService(interpretationData);
 }
