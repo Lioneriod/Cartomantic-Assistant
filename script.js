@@ -118,17 +118,22 @@ function runAIInterpretation() {
   sendToAIService(interpretationData);
 }
 
-function prepareInterpretationData(placedCards, question) {
-  const spreadDetails = placedCards.map((slot) => ({
-    position: slot.slotId,
-    meaning_of_position: getPositionMeaning(slot.slotId),
-    card_name: slot.card.name,
-    orientation: slot.orientation,
-    meanings: slot.card.meanings,
-  }));
+function prepareInterpretationData(placedCards, question, category) {
+  const spreadDetails = placedCards.map((slot) => {
+    const cardData = slot.card;
+    const selectedMeaning = cardData.meanings[category][slot.orientation];
+    return {
+      position: slot.slotId,
+      meaning_of_position: getPositionMeaning(slot.slotId),
+      card_name: cardData.name,
+      orientation: slot.orientation,
+      selected_meaning: selectedMeaning,
+    };
+  });
 
   return {
     user_question: question,
+    question_category: category,
     spread_type: "Celtic Cross",
     spread_layout: spreadDetails,
   };
