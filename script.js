@@ -123,7 +123,7 @@ function prepareInterpretationData(placedCards, question) {
     meaning_of_position: getPositionMeaning(slot.slotId),
     card_name: slot.card.name,
     orientation: slot.orientation,
-    general_meaning: slot.card.meanings.general[slot.orientation],
+    meanings: slot.card.meanings,
   }));
 
   return {
