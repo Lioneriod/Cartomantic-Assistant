@@ -172,7 +172,6 @@ async function sendToAIService(payload) {
       result.interpretation || "Could not get a clear interpretation.";
     const formattedHtml = formatAIResponse(interpretationText);
     responseContent.innerHTML = formattedHtml;
-    responseContent.textContent = interpretationText;
   } catch (error) {
     console.error("AI Interpretation Failed:", error);
     responseContent.textContent = `Error: Failed to get interpretation. ${error.message}`;
