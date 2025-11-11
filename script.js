@@ -245,14 +245,6 @@ function getPositionMeaning(slotId) {
   return legend[slotId] || "Unknown Position";
 }
 
-function setupButtonListeners() {
-  const manualBtn = document.getElementById("manual-mode-btn");
-  const autoBtn = document.getElementById("auto-mode-btn");
-  if (autoBtn) {
-    autoBtn.addEventListener("click", runAutomaticMode);
-  }
-}
-
 function clearBoard() {
   for (let i = 1; i <= 10; i++) {
     const slot = document.getElementById(`slot-${i}`);
