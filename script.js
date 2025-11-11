@@ -136,10 +136,13 @@ function prepareInterpretationData(placedCards, question) {
 async function sendToAIService(payload) {
   const AI_ENDPOINT =
     "https://lioneriod.app.n8n.cloud/webhook-test/12a7c3b3-b771-40f6-a01c-0b6d2ba87fab";
-
+  const responseContainer = document.getElementById("ai-response-container");
+  const responseContent = document.getElementById("ai-response-content");
   try {
     document.getElementById("ai-interpret-btn").textContent = "Interpreting...";
     document.getElementById("ai-interpret-btn").disabled = true;
+    responseContent.textContent = "Asking the cards...";
+    responseContainer.style.display = "block";
     console.log("Payload being sent:", JSON.stringify(payload, null, 2));
     const response = await fetch(AI_ENDPOINT, {
       method: "POST",
@@ -148,20 +151,16 @@ async function sendToAIService(payload) {
       },
       body: JSON.stringify(payload),
     });
-
     if (!response.ok) {
       throw new Error(`AI Service responded with status: ${response.status}`);
     }
-
     const result = await response.json();
-
-    alert(
-      "Interpretation Complete:\n\n" +
-        (result.interpretation || JSON.stringify(result, null, 2))
-    );
+    const interpretationText =
+      result.interpretation || "Could not get a clear interpretation.";
+    responseContent.textContent = interpretationText;
   } catch (error) {
     console.error("AI Interpretation Failed:", error);
-    alert("Failed to get interpretation. See console for details.");
+    responseContent.textContent = `Error: Failed to get interpretation. ${error.message}`;
   } finally {
     document.getElementById("ai-interpret-btn").textContent = "Interpret";
     document.getElementById("ai-interpret-btn").disabled = false;
@@ -263,7 +262,7 @@ function runAutomaticMode() {
   console.log("Running Automatic Spread...");
   clearBoard();
   const shuffledDeck = shuffleArray(allCards);
-  const drawnCards = shuffledDeck.slice(0, 10); // Take the first 10 random cards
+  const drawnCards = shuffledDeck.slice(0, 10);
   for (let i = 0; i < 10; i++) {
     const slotId = i + 1;
     const slot = document.getElementById(`slot-${slotId}`);

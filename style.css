@@ -1,7 +1,23 @@
 body {
   margin: 0;
   padding: 0;
-  height: 20px;
+}
+
+#ai-response-container {
+  margin-top: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: none;
+}
+
+#ai-response-content {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-family: inherit;
+  font-size: 0.95em;
+  line-height: 1.6;
 }
 
 .card {
@@ -193,17 +209,16 @@ body {
   transition: background-color 0.2s;
 }
 
-/* Specific colors for each button */
 .purple-btn {
-  background-color: #5d4037; /* Darker tone of purple/brown */
+  background-color: #5d4037;
 }
 
 .blue-btn {
-  background-color: #0d47a1; /* Darker tone of blue */
+  background-color: #0d47a1;
 }
 
 .yellowish-btn {
-  background-color: #ffb300; /* Darker tone of yellow/orange */
+  background-color: #ffb300;
 }
 
 .control-btn:hover {
