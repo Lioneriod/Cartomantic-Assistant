@@ -14,7 +14,7 @@ let spreadState = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("http://localhost:3000/api/cards")
+  fetch("https://cartomantic-assistant.onrender.com/api/cards")
     .then((response) => response.json())
     .then((data) => {
       allCards = data;
@@ -114,9 +114,6 @@ function runAIInterpretation() {
     placedCards,
     questionText
   );
-
-  // 4. Send data to the processing service
-  // For your n8n plan, this would be a POST request to your webhook
   sendToAIService(interpretationData);
 }
 
