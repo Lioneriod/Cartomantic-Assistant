@@ -133,6 +133,13 @@ function prepareInterpretationData(placedCards, question) {
   };
 }
 
+function formatAIResponse(text) {
+  let html = text.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  html = html.replace(/\*(.*?)\*/g, "<em>$1</em>");
+  html = html.replace(/\n/g, "<br>");
+  return html;
+}
+
 async function sendToAIService(payload) {
   const AI_ENDPOINT =
     "https://lioneriod.app.n8n.cloud/webhook-test/12a7c3b3-b771-40f6-a01c-0b6d2ba87fab";
@@ -157,6 +164,8 @@ async function sendToAIService(payload) {
     const result = await response.json();
     const interpretationText =
       result.interpretation || "Could not get a clear interpretation.";
+    const formattedHtml = formatAIResponse(interpretationText);
+    responseContent.innerHTML = formattedHtml;
     responseContent.textContent = interpretationText;
   } catch (error) {
     console.error("AI Interpretation Failed:", error);

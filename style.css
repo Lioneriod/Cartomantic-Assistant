@@ -13,7 +13,6 @@ body {
 }
 
 #ai-response-content {
-  white-space: pre-wrap;
   word-wrap: break-word;
   font-family: inherit;
   font-size: 0.95em;
@@ -198,7 +197,6 @@ body {
   margin-top: 10px;
 }
 
-/* Base style for all control buttons */
 .control-btn {
   border: none;
   padding: 10px 20px;
