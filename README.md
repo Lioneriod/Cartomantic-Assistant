@@ -18,6 +18,7 @@ So yeah, I think tarot cards are a pretty useful as psychological tool, and I wa
 
 ### Tools used in this project 🔧
 - Node.js
+- Render (to keep that API running)
 - HTML and CSS (flexbox and grid)
 - n8n (yep, feast your eyes on this project super duper small project, you AI afficionados!)
 
