@@ -4,11 +4,18 @@ const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-app.use(express.json());
+
 app.use(cors());
+app.use(express.json());
 app.use("/assets", express.static("tarot-api/assets"));
 
 app.use(express.static("tarot-api/assets"));
+
+app.use(cors({
+  origin: '*',
+  methods: 'GET,POST',
+  credentials: true,
+}));
 
 app.get("/api/cards", (req, res) => {
   res.json(majorArcana);
@@ -17,3 +24,4 @@ app.get("/api/cards", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}/api/cards`);
 });
+
