@@ -148,7 +148,7 @@ function formatAIResponse(text) {
 
 async function sendToAIService(payload) {
   const AI_ENDPOINT =
-    "https://lioneriod.app.n8n.cloud/webhook/12a7c3b3-b771-40f6-a01c-0b6d2ba87fab";
+    "https://lioneriod.app.n8n.cloud/webhook-test/12a7c3b3-b771-40f6-a01c-0b6d2ba87fab";
   const responseContainer = document.getElementById("ai-response-container");
   const responseContent = document.getElementById("ai-response-content");
   try {
