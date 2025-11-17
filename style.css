@@ -26,7 +26,7 @@ html {
         font-family: inherit;
         font-size: 0.95em;
         line-height: 1.6;
-        white-space: pre-wrap; /* Para preservar a formatação e quebrar a linha */
+        white-space: pre-wrap;
       }
 
       .card {
@@ -86,7 +86,7 @@ html {
         border-radius: 4px;
         border: 1px solid #ccc;
         padding: 8px;
-        box-sizing: border-box; /* Garante que o padding não aumente o tamanho */
+        box-sizing: border-box;
       }
 
       .category-wrapper select {
@@ -129,7 +129,7 @@ html {
         justify-content: center;
         align-items: center;
         padding: 20px;
-        flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+        flex-wrap: wrap;
       }
 
       .side-staff {
@@ -173,8 +173,6 @@ html {
         margin: 0;
       }
 
-      /* --- ESTILOS DE LAYOUT PRINCIPAL (MESCLADOS) --- */
-
       .header-wrapper {
         padding: 20px 40px;
         background-color: #ffffff;
@@ -199,7 +197,7 @@ html {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 20px 40px; /* Original L/R + Novo T/B */
+        padding: 20px 40px;
         gap: 20px;
         flex-grow: 1;
         overflow: hidden;
@@ -211,11 +209,11 @@ html {
         gap: 20px;
         flex-grow: 3;
         flex-basis: 70%;
-        overflow-y: auto; /* Correção */
-        background: #ffffff; /* Correção */
-        border-radius: 8px; /* Correção */
-        padding: 20px; /* Correção */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Correção */
+        overflow-y: auto;
+        background: #ffffff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
       }
 
       #sidebar {
@@ -223,20 +221,20 @@ html {
         flex-basis: 28%;
         display: flex;
         flex-direction: column;
-        background: #ffffff; /* Correção */
-        border-radius: 8px; /* Correção */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Correção */
-        overflow: hidden; /* Correção */
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
       }
 
       .picker-box {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        min-height: 0; /* Correção (original era 200px) */
-        max-width: 100%; /* Correção (original era 300px) */
+        min-height: 0;
+        max-width: 100%;
         flex-wrap: wrap;
-        padding: 15px; /* Correção */
+        padding: 15px;
       }
 
       .picker-box h3 {
@@ -245,7 +243,7 @@ html {
       }
 
       #card-picker {
-        height: auto; /* Correção (original era 100vh) */
+        height: auto;
         flex-grow: 1;
         overflow-y: auto;
         display: grid;
@@ -301,8 +299,6 @@ html {
         opacity: 0.9;
       }
 
-      /* --- RESPONSIVIDADE --- */
-
       @media (max-width: 900px) {
         .header-wrapper {
           padding: 20px;
@@ -314,7 +310,6 @@ html {
           padding: 20px;
         }
 
-        /* No mobile, as colunas ocupam 100% da largura */
         .main-content-column,
         #sidebar {
           flex-basis: auto;
@@ -323,7 +318,7 @@ html {
         }
 
         #sidebar {
-          max-height: 50vh; /* Limita a altura da sidebar no mobile */
+          max-height: 50vh;
         }
 
         .question-box {
