@@ -12,6 +12,10 @@ The truth is, most of the times we do know the answer already, but we are exhaus
 
 So yeah, I think tarot cards are a pretty useful as psychological tool, and I wanted a place to organize and improve all my card-interpretation-skills, and my teacher asked from a project with at least 2 services, so here we are. I hope you enjoy it!
 
+### The low-prototype
+
+![[the low prototype developed][./assets/prototype.png]](https://github.com/Lioneriod/Cartomantic-Assistant/blob/main/assets/prototype.png)
+
 ### Architecture and technical thingys 🤓
 
 - Monolithic architecture;
@@ -20,7 +24,11 @@ So yeah, I think tarot cards are a pretty useful as psychological tool, and I wa
 
 ### The main workflow 🪼
 
-![the pipeline used][./assets/pipeline.png]
+![[the pipeline used][./assets/pipeline.png]](https://github.com/Lioneriod/Cartomantic-Assistant/blob/main/assets/pipeline.png)
+
+### The n8n workflow 💡
+
+[![[the n8n workflow used][./assets/n8n workflow.png]](https://github.com/Lioneriod/Cartomantic-Assistant/blob/main/assets/n8n%20workflow.png)]
 
 ### Tools used in this project 🔧
 
