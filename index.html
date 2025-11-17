@@ -13,104 +13,106 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="header-wrapper">
-      <div id="title">Welcome to the Cartomantic Assistant!</div>
-      <div id="context">
-        Please, choose which method you prefer for picking your cards:
-      </div>
+    <div class="page-container">
+      <div class="header-wrapper">
+        <div id="title">Welcome to the Cartomantic Assistant!</div>
+        <div id="context">
+          Please, choose which method you prefer for picking your cards:
+        </div>
 
-      <div class="control-buttons">
-        <button id="auto-mode-btn" class="control-btn blue-btn">
-          Automatic
-        </button>
-        <button id="ai-interpret-btn" class="control-btn yellowish-btn">
-          Interpret
-        </button>
+        <div class="control-buttons">
+          <button id="auto-mode-btn" class="control-btn blue-btn">
+            Automatic
+          </button>
+          <button id="ai-interpret-btn" class="control-btn yellowish-btn">
+            Interpret
+          </button>
+        </div>
       </div>
+      <main id="app-container">
+        <div class="main-content-column">
+          <div id="spread-container">
+            <div class="main-cross">
+              <div class="cross-col-left">
+                <div class="card-slot" id="slot-3">
+                  <span class="slot-number">3</span>
+                </div>
+              </div>
+
+              <div class="cross-col-center">
+                <div class="card-slot" id="slot-5">
+                  <span class="slot-number">5</span>
+                </div>
+
+                <div class="center-stack">
+                  <div class="card-slot" id="slot-1">
+                    <span class="slot-number">1</span>
+                  </div>
+                  <div class="card-slot" id="slot-2">
+                    <span class="slot-number">2</span>
+                  </div>
+                </div>
+
+                <div class="card-slot" id="slot-6">
+                  <span class="slot-number">6</span>
+                </div>
+              </div>
+
+              <div class="cross-col-right">
+                <div class="card-slot" id="slot-4">
+                  <span class="slot-number">4</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="side-staff">
+              <div class="card-slot" id="slot-10">
+                <span class="slot-number">10</span>
+              </div>
+              <div class="card-slot" id="slot-9">
+                <span class="slot-number">9</span>
+              </div>
+              <div class="card-slot" id="slot-8">
+                <span class="slot-number">8</span>
+              </div>
+              <div class="card-slot" id="slot-7">
+                <span class="slot-number">7</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="question-box">
+              <div class="textarea-wrapper">
+                <h3>Ask the Cartomancer</h3>
+                <textarea
+                  id="user-question"
+                  placeholder="Type your question..."
+                ></textarea>
+              </div>
+              <div class="category-wrapper">
+                <h3>Category</h3>
+                <select id="question-category">
+                  <option value="general">General</option>
+                  <option value="love">Love</option>
+                  <option value="career">Career</option>
+                  <option value="finances">Finances</option>
+                </select>
+              </div>
+            </div>
+            <div id="ai-response-container">
+              <h3>AI Interpretation:</h3>
+              <pre id="ai-response-content"></pre>
+            </div>
+          </div>
+        </div>
+        <div id="sidebar">
+          <div class="picker-box">
+            <h3>Cards to pick from:</h3>
+            <div id="card-picker"></div>
+          </div>
+        </div>
+      </main>
     </div>
-    <main id="app-container">
-      <div class="main-content-column">
-        <div id="spread-container">
-          <div class="main-cross">
-            <div class="cross-col-left">
-              <div class="card-slot" id="slot-3">
-                <span class="slot-number">3</span>
-              </div>
-            </div>
-
-            <div class="cross-col-center">
-              <div class="card-slot" id="slot-5">
-                <span class="slot-number">5</span>
-              </div>
-
-              <div class="center-stack">
-                <div class="card-slot" id="slot-1">
-                  <span class="slot-number">1</span>
-                </div>
-                <div class="card-slot" id="slot-2">
-                  <span class="slot-number">2</span>
-                </div>
-              </div>
-
-              <div class="card-slot" id="slot-6">
-                <span class="slot-number">6</span>
-              </div>
-            </div>
-
-            <div class="cross-col-right">
-              <div class="card-slot" id="slot-4">
-                <span class="slot-number">4</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="side-staff">
-            <div class="card-slot" id="slot-10">
-              <span class="slot-number">10</span>
-            </div>
-            <div class="card-slot" id="slot-9">
-              <span class="slot-number">9</span>
-            </div>
-            <div class="card-slot" id="slot-8">
-              <span class="slot-number">8</span>
-            </div>
-            <div class="card-slot" id="slot-7">
-              <span class="slot-number">7</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="question-box">
-            <div class="textarea-wrapper">
-              <h3>Ask the Cartomancer</h3>
-              <textarea
-                id="user-question"
-                placeholder="Type your question..."
-              ></textarea>
-            </div>
-            <div class="category-wrapper">
-              <h3>Category</h3>
-              <select id="question-category">
-                <option value="general">General</option>
-                <option value="love">Love</option>
-                <option value="career">Career</option>
-                <option value="finances">Finances</option>
-              </select>
-            </div>
-          </div>
-          <div id="ai-response-container">
-            <h3>AI Interpretation:</h3>
-            <pre id="ai-response-content"></pre>
-          </div>
-        </div>
-      </div>
-      <div id="sidebar">
-        <div class="picker-box">
-          <h3>Cards to pick from:</h3>
-          <div id="card-picker"></div>
-        </div>
-      </div>
-    </main>
     <script src="script.js"></script>
   </body>
 </html>
