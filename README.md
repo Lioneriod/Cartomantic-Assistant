@@ -12,7 +12,7 @@ The truth is, most of the times we do know the answer already, but we are exhaus
 
 So yeah, I think tarot cards are a pretty useful as psychological tool, and I wanted a place to organize and improve all my card-interpretation-skills, and my teacher asked from a project with at least 2 services, so here we are. I hope you enjoy it!
 
-### The low-prototype
+### The low fidelity prototype 👾
 
 ![[the low prototype developed][./assets/prototype.png]](https://github.com/Lioneriod/Cartomantic-Assistant/blob/main/assets/prototype.jpg)
 
@@ -31,7 +31,7 @@ So yeah, I think tarot cards are a pretty useful as psychological tool, and I wa
 - Node.js
 - Render (to keep that API running)
 - HTML and CSS (flexbox and grid)
-- n8n (yep, feast your eyes on this project super duper small project, you AI afficionados!)
+- n8n (yep, feast your eyes on this super duper small project, you AI afficionados!)
 
 ### The n8n workflow 💡
 
