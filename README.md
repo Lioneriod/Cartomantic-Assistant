@@ -43,7 +43,7 @@ So yeah, I think tarot cards are a pretty useful as psychological tool, and I wa
 
 You can acess the website here in github or just by loading the html + css + js on the same folder on your pc
 
-Still, you're going to need to make it talk with your own n8n workflow, so I left an extra readme to guide you on it
+~~Still, you're going to need to make it talk with your own n8n workflow, so I left an extra readme to guide you on it~~
 
 ### Endpoints and integration flows 😎
 
