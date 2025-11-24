@@ -33,9 +33,9 @@ So yeah, I think tarot cards are a pretty useful as psychological tool, and I wa
 - Node.js
 - Render (to keep that API running)
 - HTML and CSS (flexbox and grid)
-- n8n (yep, feast your eyes on this super duper small project, you AI afficionados!)
+- ~~n8n (yep, feast your eyes on this super duper small project, you AI afficionados!)~~ (n8n removed because I'm broke rn. Decided to integrate the workflow directly in the JS)
 
-### The n8n workflow 💡
+### ~~The n8n workflow 💡~~
 
 ![[the n8n workflow used][./assets/n8n workflow.png]](https://github.com/Lioneriod/Cartomantic-Assistant/blob/main/assets/n8n%20workflow.png)
 
