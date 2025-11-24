@@ -147,38 +147,88 @@ function formatAIResponse(text) {
 }
 
 async function sendToAIService(payload) {
-  const AI_ENDPOINT =
-    "https://lioneriod.app.n8n.cloud/webhook/12a7c3b3-b771-40f6-a01c-0b6d2ba87fab";
+  const API_KEY = "AIzaSyCPqW8zLLnh6r6WxkVSI5EELuU2E6HAd2M";
+  const AI_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+
   const responseContainer = document.getElementById("ai-response-container");
   const responseContent = document.getElementById("ai-response-content");
+  const interpretBtn = document.getElementById("ai-interpret-btn");
+
   try {
-    document.getElementById("ai-interpret-btn").textContent = "Interpreting...";
-    document.getElementById("ai-interpret-btn").disabled = true;
-    responseContent.textContent = "Asking the cards...";
+    interpretBtn.textContent = "Interpreting...";
+    interpretBtn.disabled = true;
+    responseContent.textContent = "Consulting the arcana...";
     responseContainer.style.display = "block";
-    console.log("Payload being sent:", JSON.stringify(payload, null, 2));
+
+    const promptText = constructGeminiPrompt(payload);
+
+    const requestBody = {
+      contents: [
+        {
+          parts: [
+            {
+              text: promptText,
+            },
+          ],
+        },
+      ],
+    };
+
     const response = await fetch(AI_ENDPOINT, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(requestBody),
     });
+
     if (!response.ok) {
-      throw new Error(`AI Service responded with status: ${response.status}`);
+      const errData = await response.json();
+      throw new Error(
+        `AI Service Error: ${errData.error?.message || response.statusText}`
+      );
     }
+
     const result = await response.json();
+
     const interpretationText =
-      result.interpretation || "Could not get a clear interpretation.";
+      result.candidates?.[0]?.content?.parts?.[0]?.text ||
+      "Could not get a clear interpretation.";
+
     const formattedHtml = formatAIResponse(interpretationText);
     responseContent.innerHTML = formattedHtml;
   } catch (error) {
     console.error("AI Interpretation Failed:", error);
     responseContent.textContent = `Error: Failed to get interpretation. ${error.message}`;
   } finally {
-    document.getElementById("ai-interpret-btn").textContent = "Interpret";
-    document.getElementById("ai-interpret-btn").disabled = false;
+    interpretBtn.textContent = "Interpret";
+    interpretBtn.disabled = false;
   }
+}
+
+function constructGeminiPrompt(body) {
+  const formattedLayout = body.spread_layout
+    .map(
+      (slot) =>
+        `Position ${slot.position} (${slot.meaning_of_position}): ${slot.card_name} (${slot.orientation})
+    Meaning (${body.question_category}): ${slot.selected_meaning}`
+    )
+    .join("\n");
+
+  const geminiPrompt = `You are a profound and supportive Tarot interpreter.
+The user has a question about: **${body.question_category}**.
+Their specific question is: **"${body.user_question}"**. If this question seems like gibberish or just random characters/numbers pressed, address the user about it instead of following the rest of the prompt.
+
+Provide a professional, insightful, and supportive reading based *only* on the provided category. Do not use meanings from other categories.
+Address each card position and conclude with a summary.
+
+---
+**Spread Details (Celtic Cross):**
+${formattedLayout}
+
+Don't write an intro, only the results of the interpretation. Present the interpretation in the same language as the question. If the question was in Brazilian Portuguese, translate upright to normal and reversed to invertido). Try your best to make the text short but separating by each slot and card`;
+
+  return geminiPrompt;
 }
 
 function setupCardIconListeners() {
