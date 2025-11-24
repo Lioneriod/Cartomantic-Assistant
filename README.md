@@ -4,6 +4,8 @@ This is a personal project of mine to help when reading cards.
 
 Supports only major arcana for now!
 
+You can access it here: https://lioneriod.github.io/Cartomantic-Assistant/
+
 ### Why 🤷‍♂️
 
 While I don't actually believe in the power of the cards and it's uses in divination, I gotta admit they are a bomb for those moments when we are uncertain.
